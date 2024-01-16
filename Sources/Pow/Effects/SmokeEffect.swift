@@ -63,7 +63,9 @@ private struct SmokeEffect: ViewModifier, Continuous {
                     let image = Bundle.module.image(forResource: particle)!.cgImage(forProposedRect: nil, context: nil, hints: nil)!
                     #endif
 
+                    #if !os(tvOS)
                     SmokeLayerView(size: proxy.size, isActive: isActive, particle: image, seed: UInt32(offset))
+                    #endif
                 }
             }
         }
@@ -108,6 +110,7 @@ private class EmitterView: NSView {
 }
 #endif
 
+#if !os(tvOS)
 private struct SmokeLayerView: ViewRepresentable {
     var size: CGSize
 
@@ -171,8 +174,9 @@ private struct SmokeLayerView: ViewRepresentable {
         view.emitterLayer.lifetime = isActive ? 1 : 0
     }
 }
+#endif
 
-#if DEBUG
+#if DEBUG && !os(tvOS)
 struct ContinuousParticleEffect_Previews: PreviewProvider {
     private struct Preview: View {
         @State

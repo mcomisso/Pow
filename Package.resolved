@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "flyingfox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swhitty/FlyingFox.git",
+      "state" : {
+        "revision" : "ed86fc6d68ec1467aaab3e494b581e66dd7a4512",
+        "version" : "0.12.2"
+      }
+    },
+    {
+      "identity" : "snapshotpreviews-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EmergeTools/SnapshotPreviews-iOS",
+      "state" : {
+        "revision" : "d6629ac56ad8c4cd2bb2aa11b6bdcc435f92cfc9",
+        "version" : "0.7.6"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,5 +1,5 @@
 import SwiftUI
-
+#if !os(tvOS)
 struct AngleControl<Label: View>: View {
     @Binding
     var angle: Angle
@@ -19,6 +19,7 @@ struct AngleControl<Label: View>: View {
 
     @Environment(\.controlSize)
     private var controlSize
+
 
     private var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0)
@@ -132,3 +133,4 @@ struct AngleControl_Previews: PreviewProvider {
         .padding()
     }
 }
+#endif
